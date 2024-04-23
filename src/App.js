@@ -5,17 +5,19 @@ function App() {
   const [stage, setStage] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
   function handlePrevious() {
-    if (stage > 1) setStage(stage - 1);
+    if (stage > 1) setStage((s) => s - 1);
   }
   function handleNext() {
-    if (stage < 3) setStage(stage + 1);
+    if (stage < 3) {
+      setStage((s) => s + 1);
+    }
   }
   return (
     <>
       <button
         className="close"
         onClick={() => {
-          setIsOpen(!isOpen);
+          setIsOpen((e) => !e);
         }}
       >
         &times;
